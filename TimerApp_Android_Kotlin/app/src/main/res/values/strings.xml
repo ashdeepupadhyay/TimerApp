@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TimerApp_Android_Kotlin</string>
+    <string name="action_settings">Settings</string>
+</resources>
