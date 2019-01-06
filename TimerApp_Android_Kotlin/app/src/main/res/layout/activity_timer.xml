@@ -40,7 +40,7 @@
             app:srcCompat="@drawable/ic_pause"/>
 
     <android.support.design.widget.FloatingActionButton
-            android:id="@+id/play"
+            android:id="@+id/fab_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|start"
