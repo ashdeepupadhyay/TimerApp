@@ -29,13 +29,21 @@
                 android:name=".TimerNotificationActionReceiver"
                 android:enabled="true"
                 android:exported="false">
-                <intent-filter>
-                    <action android:name="stop"/>
-                    <action android:name="pause"/>
-                    <action android:name="resume"/>
-                    <action android:name="start"/>
-                </intent-filter>
+            <intent-filter>
+                <action android:name="stop"/>
+                <action android:name="pause"/>
+                <action android:name="resume"/>
+                <action android:name="start"/>
+            </intent-filter>
         </receiver>
+
+        <activity android:name=".Settings"
+                  android:label="Settings"
+                  android:parentActivityName=".TimerActivity"
+                  android:theme="@style/AppTheme.NoActionBar"
+        >
+
+        </activity>
     </application>
 
 </manifest>

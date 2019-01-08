@@ -8,8 +8,11 @@ import com.android.ashdeep.timerapp_android_kotlin.TimerActivity
 
 class PrefUtil {
     companion object {
+        private const val TIMER_LENGTH_ID="com.ashdeep.timer.timer_length"
         fun getTimerLength(context: Context):Int{
             //place holder
+            val preference=PreferenceManager.getDefaultSharedPreferences(context)
+            return preference.getInt(TIMER_LENGTH_ID,10)
             return 1;
         }
 
