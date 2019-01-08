@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import com.android.ashdeep.timerapp_android_kotlin.util.NotificationUtil
 import com.android.ashdeep.timerapp_android_kotlin.util.PrefUtil
 
 import kotlinx.android.synthetic.main.activity_timer.*
@@ -81,8 +82,8 @@ class TimerActivity : AppCompatActivity() {
         initTimer()
         Log.d("mytag","OnResume")
         removeAlarm(this)
-        //ToDo: notification
-
+        //hide notification
+        NotificationUtil.hideTimerNotification(this)
     }
 
     override fun onPause() {
@@ -92,11 +93,13 @@ class TimerActivity : AppCompatActivity() {
             timer.cancel()
             val wakeUpTime= setAlarm(this, nowSeconds,secondsremaing)
 
-            //ToDo:notification
+            //show notification
+            NotificationUtil.showTimerRunning(this,wakeUpTime)
         }
         else if(timerState==TimerState.Paused)
         {
-            //ToDo:show notification
+            //show notification
+            NotificationUtil.showTimerPaused(this)
         }
 
         PrefUtil.setPreviousTimerLegthSeconds(timerLengthSeconds,this);
